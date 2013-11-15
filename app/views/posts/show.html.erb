@@ -1,18 +1,21 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
- 
-<h2>Comments</h2>
-<%= render @post.comments %>
- 
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
- 
+<div class="col  col-xxs-12  col-md-8  col-md-offset-2">  
+  <div class="panel panel-default">
+    
+    <section id="panel-heading" >
+      <h3>  <%= @post.title %>  </h3>
+    </section>
+
+    <section class="panel-body">
+        <%= simple_format @post.text %>
+    </section> 
+
+    <section class="panel-footer">
+      <%= render @post.comments %>
+      <%= render "comments/form" %>
+    </section>
+
+   </div>
+<div>
+
 <%= link_to 'Edit Post', edit_post_path(@post) %> |
 <%= link_to 'Back to Posts', posts_path %>
